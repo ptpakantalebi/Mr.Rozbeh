@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <center>
+            <h1>Welcome</h1><br><br>
+            <label for="name">Enter your name</label>
+            <input type="text" id="name"><br><br>
+            <a href="\static\Lessons score.xlsx" download="Excel">
+                <img src="\static\Excel picture.png" alt="Download the Excel File" width="104" height="142">
+                <p>Download the Excel File</p>
+            </a>
+            <input type="file" id="File"><br><br>
+            <!-- <button onclick="upload()"><b>Send</b></button> -->
+        </center>
+        <script>
+            document.querySelector('#File').addEventListener('change', function() {
+                var reader = new FileReader();
+                reader.onload = function(){
+                    var arrayBuffer = this.result;
+                    var base64 = btoa(
+                        new Uint8Array(arrayBuffer)
+                            .reduce((data, byte) => data + String.fromCharCode(byte), ''));
+                    fetch("/",{
+                        method:"POST",
+                        mode:"cors",
+                        headers:{"Content_Type":"application/json"},
+                        body:JSON.stringify({"FILE":base64,"Username":document.getElementById("name").value})
+                    })
+                    .then(response => response.json())
+                    .then(data => window.location.href = document.location.origin+data.page)
+                }
+                reader.readAsArrayBuffer(this.files[0]);
+
+            }, false);
+        </script>
+    </body>
+</html>
