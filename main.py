@@ -42,4 +42,5 @@ def stream():
         yield 'data: {}___{}___{}___{}\n\n'.format(list_Average[0],list_Lessons,max(list_Average[1:]),min(list_Average[1:]))
     return Response(eventStream(), mimetype="text/event-stream")
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=80)
