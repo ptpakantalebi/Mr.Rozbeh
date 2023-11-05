@@ -1,3 +1,7 @@
 Flask
 gunicorn
+<<<<<<< HEAD
 pandas
+=======
+pandas
+>>>>>>> e2759f937048e7387512eed7a58d2b9a38bcabdc
