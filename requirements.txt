@@ -1,5 +1,3 @@
 Flask
 gunicorn
 pandas
-base64
-io
