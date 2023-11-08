@@ -1,6 +1,5 @@
 Flask
 gunicorn
-deta
 pandas
-Python_IO
 pybase64
+Python_IO
