@@ -1,5 +1,5 @@
 flask
-gunicon
+gunicorn
 pandas
-base64
-io
+pybase64
+Python_IO
