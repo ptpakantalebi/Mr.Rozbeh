@@ -1,5 +1,0 @@
-Flask
-gunicorn
-pandas
-pybase64
-Python_IO
