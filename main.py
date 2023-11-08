@@ -1,9 +1,9 @@
-from flask import Flask, request, Response
+from flask import request, Response
 import pandas as pd
 from io import BytesIO
 import base64
 
-app = Flask(__name__,static_folder="static")
+from app import app
 
 list_Lessons = []
 list_Average = []
