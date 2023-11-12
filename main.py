@@ -3,7 +3,8 @@ import pandas as pd
 from io import BytesIO
 import base64
 
-from app import app
+from app_1 import app
+
 
 list_Lessons = []
 list_Average = []
